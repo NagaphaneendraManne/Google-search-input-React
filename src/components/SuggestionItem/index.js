@@ -2,8 +2,8 @@
 import './index.css'
 
 const SuggestionItem = props => {
-  const {suggestionDetails} = props
-  const {suggestion, updateSearchInput} = suggestionDetails
+  const {suggestionDetails, updateSearchInput} = props
+  const {suggestion} = suggestionDetails
 
   const onClickSuggestion = () => {
     updateSearchInput(suggestion)

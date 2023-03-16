@@ -20,7 +20,7 @@ class GoogleSuggestions extends Component {
 
   render() {
     const {searchInput} = this.state
-    const suggestionsList = this.props
+    const {suggestionsList} = this.props
     const searchResults = suggestionsList.filter(each =>
       each.suggestion.toLowerCase().includes(searchInput.toLowerCase()),
     )
@@ -47,11 +47,11 @@ class GoogleSuggestions extends Component {
                 alt="search icon"
               />
             </div>
-            <ul className="list-container">
-              {searchResults.map(each => (
+            <ul className="suggestions-list">
+              {searchResults.map(eachSuggestion => (
                 <SuggestionItem
-                  key={each.id}
-                  suggestionDetails={each}
+                  key={eachSuggestion.id}
+                  suggestionDetails={eachSuggestion}
                   updateSearchInput={this.updateSearchInput}
                 />
               ))}
